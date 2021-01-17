@@ -42,6 +42,19 @@ module.exports={
                     'css-loader',
                     'sass-loader'
                 ]
+            },
+            {
+                //regla para tratar elementos multimedia
+                test:/\.(png|gif|jpg)$/,
+                use:[
+                    {
+                        'loader':'file-loader',
+                        options:{
+                            //configuración para que el nombre sea un hash
+                            name: 'assets/[hash].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     },
